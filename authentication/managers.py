@@ -1,11 +1,15 @@
 from django.contrib.auth.base_user import BaseUserManager
 
+
 class UserManager(BaseUserManager):
-    """ Custom user model manager """
+    """ 
+    Custom user model manager 
+    """
 
     def _create_user(self, phone, password, **kwargs):
-        """ This function is called by the create_user and create_superuser function 
-                to create and save the users. """
+        """ 
+        This function is called by the create_user and create_superuser function to create and save the users. 
+        """
         if not phone:
             raise ValueError("User must have a phone")
         if not password:
